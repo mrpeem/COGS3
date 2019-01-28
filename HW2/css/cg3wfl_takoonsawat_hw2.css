@@ -23,9 +23,12 @@ table, th, td {
 }
 
 a {
-  color: orange;
+  color: white;
 }
 
+a:link {
+  background-color: #c0a4e8;
+}
 a:visited {
   color: #FF33BB;
 }
