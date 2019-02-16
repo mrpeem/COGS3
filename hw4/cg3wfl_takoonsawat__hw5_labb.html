@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+  <head>
+    <title>Peem Takoonsawat - CG3WFL - Lab B - Greetings to your TA/IA</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+
+    <script>
+      /*
+       * Defining Table
+       * Use Bootstrap styling: jumbotron, container, btn, navbar
+       * Input: A person's name
+       * Processing: Create a personalized greeting
+       * Output: The greeting
+       */
+       function greetUser() {
+        // prompt the user to type in their name to create a personalized greeting for the user
+        // and display the greeting in a popup window
+        alert('Hello ' + prompt('Please enter your name: ') + '. I hope you\'re having fun today.');
+       }
+    </script>
+  </head>
+
+  <body>
+    <!-- jumbotron heading for the page -->
+    <div class="jumbotron text-center">
+      Greetings User
+    </div>
+
+    <div class="alert alert-warning" role="alert">
+      <strong>I want to send you greetings.</strong>
+      <br>
+      Please clck on the button:
+      <button type="button" class="btn btn-warning" role="alert" onClick="greetUser()">Hello!</button>
+    </div>
+
+    <!-- fixed bottom footer for the page -->
+    <nav class="navbar fixed-bottom navbar-light bg-light">
+      <div class="small">Peem Takoonsawat &copy; 2019 Cognitive Science. </div>
+    </nav>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

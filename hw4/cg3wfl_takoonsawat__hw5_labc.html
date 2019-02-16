@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+  <head>
+    <title>Peem Takoonsawat - CG3WFL - Lab C - Greetings to your TA/IA using text field! No more popup!!</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+
+    <script>
+      /*
+       * Defining Table
+       * Use Bootstrap styling: jumbotron, container, btn, navbar
+       * Input: A person's name
+       * Processing: Personalized the greeting and display a saying for that person
+       * Output: Name and the saying using innerHTML property
+       */
+       function applySaying() {
+        // get user name from the text field with nameInputBox id and store it
+        let name = document.getElementById('nameInputBox').value;
+        
+        // use string concatenation to create a personalized saying
+        let saying = 'Did you know that a dog is a man\'s best friend?';
+
+        // display the sayign in the div that hsa the outputDIv
+        document.getElementById('outputName').innerHTML = name + ', ';
+        document.getElementById('outputSaying').innerHTML = saying;
+       }
+    </script>
+  </head>
+
+  <body>
+    <!-- jumbotron heading for the page -->
+    <div class="jumbotron text-center">
+      <h2>I have a saying for you!</h2>
+    </div>
+
+    <!-- input tag with id -->
+    <div class="container"> 
+      <h3>Hi!</h3>
+      <p>Please enter your name here:
+        <input type="text" id="nameInputBox"> 
+          <br>
+          and click on the button to see your personalized saying. 
+          <br>
+          <button type="button" class="btn btn-info" onClick="applySaying()"> Your saying </button>
+      </p>
+    </div>
+
+    <br>
+    <!-- tag with image and output -->
+    <div class="container media border p-3">
+      <img src="images/img_avatar.png" class="mr-3 mt-3 rounded-circle" style="width:60px">
+      <div class="media-body">
+        <h3 id="outputName"></h3>
+        <p id="outputSaying"></p>
+    </div>
+
+    <!-- fixed bottom footer for the page -->
+    <nav class="navbar fixed-bottom navbar-light bg-light">
+      <div class="small">Peem Takoonsawat &copy; 2019 Cognitive Science. </div>
+    </nav>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
