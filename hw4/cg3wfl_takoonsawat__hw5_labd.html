@@ -58,7 +58,7 @@
 
   <body>
     <!-- jumbotron heading for the page -->
-    <div class="jumbotron text-center">
+    <div style="background:#9fbff2 !important" class="jumbotron text-center display-4">
       <h2>Here is your personal temperature converter</h2>
     </div>
 
@@ -66,7 +66,7 @@
 
     <!-- input tag with id -->
     <div class="container"> 
-      <h3>Fahrenheit to Celcius</h3>
+      <h3 class="text-primary" style="display:inline">Fahrenheit </h3> <h3 style="display:inline"> to </h3> <h3 style="display:inline" class="text-danger"> Celcius</h3>
       <p>Please enter a temperature in Fahrenheit:
         <input type="text" id="fahrenInputBox"> 
         <br>
@@ -80,7 +80,7 @@
 
     <br>
     <!-- output div -->
-    <div class="container media border p-3">
+    <div class="container media border p-3 bg-light">
       <div class="media-body">
         <p><span id="fahrenheitValue"></span> degrees in Fahrenheit: </p>
         <div class="progress">
@@ -99,13 +99,13 @@
     <!-- C to F -->
     <!-- input tag with id -->
     <div class="container"> 
-      <h3>Celcius to Fahrenheit</h3>
+      <h3 class="text-danger" style="display:inline">Celcius </h3> <h3 style="display:inline"> to </h3> <h3 style="display:inline" class="text-primary"> Fahrenheit</h3>
       <p>Please enter a temperature in Celcius:
         <input type="text" id="celsInputBox"> 
         <br>
           and then click on the button.
           <br>
-          <button type="button" class="btn btn-info" onClick="celsToFahr()"> 
+          <button type="button" class="btn btn-danger" onClick="celsToFahr()"> 
             Convert C to F 
           </button>
       </p>
@@ -113,16 +113,16 @@
 
     <br>
     <!-- output div -->
-    <div class="container media border p-3">
+    <div class="container media border p-3 bg-light">
       <div class="media-body">
         <p><span id="celciusValue"></span> degrees in Celcius: </p>
         <div class="progress">
-          <div class="progress-bar bg-info" id="celciusVal"></div>
+          <div class="progress-bar bg-danger" id="celciusVal"></div>
         </div>
         <br>
         <p> Converts to <span id="convertsToFValue"></span> degrees in Fahrenheit: </p>
         <div class="progress">
-          <div class="progress-bar bg-danger" id="fahrenheitDiv"></div>
+          <div class="progress-bar bg-info" id="fahrenheitDiv"></div>
         </div>
       </div>
     </div>
@@ -130,8 +130,8 @@
     <br><br>
 
     <!-- fixed bottom footer for the page -->
-    <nav class="navbar fixed-bottom navbar-light bg-light">
-      <div class="small">Peem Takoonsawat &copy; 2019 Cognitive Science. </div>
+    <nav class="navbar fixed-bottom navbar-light bg-dark">
+      <div class="small text-primary">Peem Takoonsawat &copy; 2019 Cognitive Science. </div>
     </nav>
   </body>
 </html>
