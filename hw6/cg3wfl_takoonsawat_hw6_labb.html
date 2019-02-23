@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+  <head>
+    <title>Peem Takoonsawat - CG3WFL - Lab B - Math Quizzer</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+
+    <script>
+      /*
+       * Defining Table
+       * Minimum Bootstrap styling requirements: Jumbotron, alert, btn
+       * Input: 2 operands, an arithmetic operator, and an answer
+       * Processing: Calculate the value of the expression
+       * Output: The message notifying the user whether the inputted answer
+       *         was the correct one.
+       */
+      function calculate() {
+        let operand1 = $('#operand1').val(); // get the first operand
+        let operand2 = $('#operand2').val(); // get the second operand
+        let operator = $('.operator.active').text(); // get the operator
+        let answer_input = $('#answer_input').val(); // get the input answer
+
+        let expr = operand1 + operator + operand2; // the math expression
+        let answer = eval(expr);
+
+        let str = '';
+        if (answer_input == answer)
+          str = 'Great Job! ' + expr + ' = ' + answer;
+        else
+          str = 'Almost! Try Again. The correct answer is ' + expr + ' = ' + answer;
+        
+        $('#answer_output').text(str);
+      }
+
+      // add/remove 'active' class from clcked operator and remove the class from other buttons
+      $(document).ready( () => {
+        $('.operator').click( (e) => { 
+          $(e.currentTarget).toggleClass('active').siblings().removeClass('active');
+        });
+      });
+
+    </script>
+  </head>
+
+  <body class="alert-dark">
+    <!-- jumbotron heading for the page -->
+    <div class="jumbotron text-center display-4 bg-warning">
+      Math Quizzer
+    </div>
+
+    <div class="alert alert-warning" role="alert">
+      <strong>Test Your Math Skills</strong>
+      <br>
+      
+      <!-- input for the the first operand -->
+      <input id="operand1"> 
+
+      <!-- the operators -->
+      <div class="btn-group">
+        <button class="btn btn-primary operator"> + </button>
+        <button class="btn btn-primary operator"> - </button>
+        <button class="btn btn-primary operator"> * </button>
+        <button class="btn btn-primary operator"> / </button>
+        <button class="btn btn-primary operator"> % </button>
+      </div>
+
+      <!-- input for the second operand and answer  -->
+      <input id="operand2"> = <input id="answer_input"> <br>
+
+      <!-- button to check answer -->
+      <button type="Check Your Answer!" class="btn btn-warning" onClick="calculate()">Return Answer!</button>
+      
+      <!-- placeholder to display the answer -->
+      <p id="answer_output"></p>
+    </div>
+
+    <!-- fixed bottom footer for the page -->
+    <nav class="navbar fixed-bottom navbar-light alert-warning">
+      <div class="small">Peem Takoonsawat &copy; 2019 Cognitive Science. </div>
+    </nav>
+
+  </body>
+</html>

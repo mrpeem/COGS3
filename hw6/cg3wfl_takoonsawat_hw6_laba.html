@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+  <head>
+    <title>Peem Takoonsawat - CG3WFL - Lab A - Wedding Banquet App</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+
+    <script>
+      /*
+       * Defining Table
+       * Minimum Bootstrap styling requirements: Jumbotron, alert, btn
+       * Input: Total number of wedding guests, number of tables in the venue
+       * Processing: Calculate the number of guests at each table
+       * Output: The guests at the tables should be balanced. Then output a
+       *         phrase that tells the wedding coordinator how many seats 
+       *         to set for each table. 
+       *         List the larger table first.
+       */
+      function calculate() {
+        let guests = $('#guests').val(); // number of guests
+        let tables = $('#tables').val(); // number of tables
+ 
+        let perTable = Math.floor(guests / tables); // balanced number of guests per table
+        let remainder = guests % tables; // remaining guests
+
+        if (remainder == 0) { // no remainder
+          let str = 'There will be ' + tables + ' tables with ' + perTable +' guests.';
+          $('#answer').text(str);  
+        }
+        else { // not all tables have same number of guests
+          let str = 'There will be ' + remainder + ' tables with ' + (perTable + 1); 
+          str += ' and ' + (tables - remainder) + ' tables with ' + perTable + ' guests.';
+          $('#answer').text(str);   
+        }
+
+        // just to handle edge cases
+        if (tables <= 0) 
+          $('#answer').text('There will be ' + guests + ' guests standing because the planner did not provide  any tables');
+      }
+    </script>
+  </head>
+
+  <body class="alert-dark">
+    <!-- jumbotron heading for the page -->
+    <div class="jumbotron text-center display-4 bg-warning">
+      Wedding Banquet Table Planner App
+    </div>
+
+    <div class="alert alert-warning" role="alert">
+      <strong>Input the number of guests and the number of tables you are going to use.</strong>
+      <br>
+      Number of guests: <input id="guests"> <br>
+      Number of tables: <input id="tables"> <br>
+      <button type="button" class="btn btn-warning" onClick="calculate()">Return Answer!</button>
+      <p id="answer"></p>
+    </div>
+
+    <!-- fixed bottom footer for the page -->
+    <nav class="navbar fixed-bottom navbar-light alert-warning">
+      <div class="small">Peem Takoonsawat &copy; 2019 Cognitive Science. </div>
+    </nav>
+  </body>
+</html>
