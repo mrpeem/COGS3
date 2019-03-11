@@ -1,0 +1,47 @@
+/* navbar stuff */
+body 
+{
+  position: relative; 
+  background-color:black;
+}
+.affix 
+{
+  top:0;
+  width: 100%;
+  z-index: 9999 !important;
+}
+.navbar
+{
+  margin-bottom: 0px;
+}
+
+.affix ~ .container-fluid 
+{
+ position: relative;
+ top: 50px;
+}
+
+#section1, #section3, #section5 {
+  padding-top:50px;
+  background-color: #E6E6F5;
+}
+
+#section2, #section4  {
+  padding-top:50px;
+  color: #fff; 
+  background-color: #171717;
+}
+
+
+
+/* style for singnature on main page */
+.signature
+{
+  width:600px; 
+  height:200px
+  position:relative;
+  padding-top: 170px;
+}
+
+
+
